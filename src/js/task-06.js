@@ -1,16 +1,30 @@
-const input = document.querySelector('#validation-input');
-const textNumberLimit = document.querySelector('[data-length="6"]');
+// Напиши скрипт, который бы при потере фокуса на инпуте, проверял его содержимое
+// на правильное количество символов.
+// - Сколько символов должно быть в инпуте, указывается в его атрибуте
+//   `data-length`.
+// - Если введено подходящее количество, то `border` инпута становится зеленым,
+//   если неправильное - красным.
 
-input.addEventListener('focus', onInputFocus);
-input.addEventListener('blur', onInputBlur);
+// Для добавления стилей, используй CSS-классы `valid` и `invalid`.
 
-function onInputFocus() {
-    console.log('Инпут получил фокус');
-}
+const inputForm = document.querySelector('#validation-input');
+const lengthNumberForm = document.querySelector('[data-length="6"]');
 
-function onInputBlur() {
-    if (textNumberLimit.textContent === Number(textNumberLimit.textContent)) {
-        return true;
+inputForm.addEventListener('blur', () => {
+    if (+lengthNumberForm.dataset.length === lengthNumberForm.value.length) {
+        inputForm.classList.add('valid');
+        inputForm.classList.remove('invalid');
+    } else {
+        inputForm.classList.remove('valid');
+        inputForm.classList.add('invalid');
     };
+});
 
-};
+
+
+
+
+
+
+
+
