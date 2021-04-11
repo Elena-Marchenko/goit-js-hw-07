@@ -9,3 +9,9 @@
 #validation-input.invalid {
   border-color: #f44336;
 }
+
+.image-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

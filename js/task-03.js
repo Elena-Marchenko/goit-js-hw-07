@@ -27,22 +27,17 @@ const images = [
   },
 ];
 
+
+const makeImagesList = ({ url, alt }) => {
+  return `<li><img src = '${url}', alt = '${alt}', width='300px'></li>`;
+};
+
 const imagesListEl = document.querySelector('#gallery');
+imagesListEl.classList.add('image-list__item');
+imagesListEl.style.listStyle = 'none';
 
-imagesListEl.style.display = 'flex';
-imagesListEl.style.alignItems = 'center';
-imagesListEl.style.justifyContent = 'space-between';
+const makeImagesListRows = images.map(makeImagesList,)
+  .join('');
 
-
-const imagestListItemEl = images.map(image => {
-    const imgItemEl = document.createElement('li');
-    imgItemEl.insertAdjacentHTML(
-        'afterbegin',
-        `<img src='${image.url}' alt='${image.alt}' width='500px'>`,
-    );
-    imgItemEl.style.listStyle = 'none';
-    return imgItemEl;
-});
-
-imagesListEl.append(...imagestListItemEl);
-console.log(imagestListItemEl);
+imagesListEl.insertAdjacentHTML('beforeend', makeImagesListRows);
+console.log(makeImagesListRows);

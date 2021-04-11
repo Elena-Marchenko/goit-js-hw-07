@@ -20,10 +20,7 @@ function increment() {
 };
     
 function decrement() {
-    counterValue.textContent = Number(counterValue.textContent) - 1;
+   counterValue.textContent = Number(counterValue.textContent) - 1;
 };
-
-
-
-
+console.log(counterValue);
 
