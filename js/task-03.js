@@ -40,4 +40,4 @@ const makeImagesListRows = images.map(makeImagesList,)
   .join('');
 
 imagesListEl.insertAdjacentHTML('beforeend', makeImagesListRows);
-console.log(makeImagesListRows);
+console.log(imagesListEl);
